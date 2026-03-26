@@ -32,10 +32,11 @@ class SMSNotification extends Notification {
 }
 class Notify{
     public static void main(String[] args) {
-        Notification n;
-        n=new EmailNotification("Text1","Order Confirmed");
-        n.send();
-        n=new SMSNotification("Text2","OTP is 270");
-        n.send();
+        Notification[] n={new EmailNotification("Text1","Order Confirmed"),
+         new SMSNotification("Text2","OTP is 270")};
+        for(Notification i:n){
+            i.send();
+        }
     }
 }
+
